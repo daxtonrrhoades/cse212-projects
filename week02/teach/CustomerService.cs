@@ -11,17 +11,24 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Create a queue of 3 customers: James (ABC) [unsatisfied], John (BCA) [Too happy], Peter (CAB) [Feeling Good] and dequeue 4 times
+        // Expected Result: It will queue the customers and dequeue more than the que contains. This will pass an exception.
         Console.WriteLine("Test 1");
-
-        // Defect(s) Found: 
+        var service = new CustomerService(3);
+        service.AddNewCustomer();
+        service.AddNewCustomer();
+        service.AddNewCustomer();
+        service.ServeCustomer();
+        service.ServeCustomer();
+        service.ServeCustomer();
+        service.ServeCustomer();
+        // Defect(s) Found: None. It threw the exception as it was supposed to
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Create a queue with a negative number size, input 11 customers
+        // Expected Result: Throw an exception
         Console.WriteLine("Test 2");
 
         // Defect(s) Found: 
