@@ -13,7 +13,17 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // Plan ---> Make an array of the double data type and have a for loop run through it as many times as the length is equal to.
+        // In each iteration, calculate the current multiple by multiplying the input by the loop index +1. 
+        // Then store the calculated multiple into the array at the current index and return it.
+        double[] multiples = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
+
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +39,20 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        /// Plan --->  Make it so if the amount is greater than the length of the list, it will revert back to 0.
+        /// Then locate the middle of the list and split it by counting the data and subtracting the amount. 
+        /// Use GetRange to create sublists, one for the left side and one for the right.
+        /// Then clear the origianl and add the sublists, first the right, then the left.
+        amount = amount % data.Count;
+
+        int splitList = data.Count - amount;
+
+        List<int> rightList = data.GetRange(splitList, amount);
+        List<int> leftList = data.GetRange(0, splitList);
+
+        data.Clear();
+        data.AddRange(rightList);
+        data.AddRange(leftList);
     }
 }
